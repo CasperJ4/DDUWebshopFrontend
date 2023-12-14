@@ -1,0 +1,11 @@
+@startuml
+actor Bruger
+participant "Server" as Web
+database "Database Server" as DB
+
+Bruger -> Web : Indtaster brugernavn og adgangskode
+Web -> DB : SQL forespørgsel\nSELECT * FROM users\nWHERE username = {brugerinput} \nAND password = {adgangskode}
+DB --> Web : Returnerer brugerdata
+Web --> Bruger : Login Success
+
+@enduml

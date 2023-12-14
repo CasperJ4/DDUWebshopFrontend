@@ -1,0 +1,16 @@
+@startuml
+skinparam backgroundColor transparent
+
+cloud {
+  [Internet] 
+}
+
+node "Klient" as Client
+node "Server" as Server
+
+Client -right-> [Internet] : Anmodning
+[Internet] -right-> Server : Videresender anmodning
+Server -left-> [Internet] : Svar
+[Internet] -left-> Client : Videresender svar
+
+@enduml

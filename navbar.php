@@ -1,10 +1,9 @@
-
 <div class="container mt-4 text-center">
     <h1>Modern Website</h1>
 
 </div>
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light centered-nav">
+<nav class="navbar navbar-expand-lg navbar-light  centered-nav sticky-top" style="background-color: white;">
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -17,7 +16,7 @@
                 <a class="nav-link" href="about.php">Om os</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="contact.php" tabindex="-1" aria-disabled="true">Kontakt</a>
+                <a class="nav-link" href="contact.php">Kontakt</a>
             </li>
         </ul>
     </div>

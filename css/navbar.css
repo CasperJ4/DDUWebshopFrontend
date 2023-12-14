@@ -1,0 +1,20 @@
+ .centered-nav .nav-link {
+     color: rgb(255, 255, 255);
+     text-align: center;
+ }  
+ .centered-nav .nav-item.active .nav-link {
+     color: rgb(0, 0, 0);
+     background-color: rgb(255, 255, 255);
+ }
+.centered-nav .navbar-nav {
+    justify-content: center;
+    width: 100%;
+  
+    border: solid #eee;
+    border-width: 1px 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
