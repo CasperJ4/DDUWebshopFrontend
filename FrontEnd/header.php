@@ -10,9 +10,12 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/checkout.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <script src="js/cartPopup.js"></script>
     <!-- Custom Assets -->
+
 </head>
 
 <body>
@@ -83,3 +86,12 @@
         </div>
     </div>
     </div>
+    <!-- Login button -->
+    <a href="login.php">
+        <button>
+            <span>BUTTON</span>
+        </button>
+    </a>
+
+
+    <!-- Login button -->
