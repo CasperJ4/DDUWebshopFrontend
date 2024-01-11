@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/checkout.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/login.css">
 
     <script src="js/cartPopup.js"></script>
     <!-- Custom Assets -->
