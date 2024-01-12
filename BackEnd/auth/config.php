@@ -1,5 +1,7 @@
 <?php
 
+require_once 'BackEnd\core\init.php'; // Include the Database class file
+
 $GLOBALS['config'] = array(
     'database' => array(
         'host' => 'localhost',

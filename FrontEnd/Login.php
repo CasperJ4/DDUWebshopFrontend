@@ -3,13 +3,13 @@
 <div class="container">
     <div class="form-container" justify-content-center>
         <p class="title">Welcome back</p>
-        <form class="form" method="post" action="login.php"> <!-- Add method and action attributes -->
-            <input type="email" class="input" name="email" placeholder="Email"> <!-- Add name attribute for email -->
-            <input type="password" class="input" name="password" placeholder="Password"> <!-- Add name attribute for password -->
+        <form class="form" method="post" action="login.php">
+            <input type="text" class="input" name="username" placeholder="Username"> <!-- Changed type and name to username -->
+            <input type="password" class="input" name="password" placeholder="Password">
             <p class="page-link">
                 <span class="page-link-label">Forgot Password?</span>
             </p>
-            <button class="form-btn" type="submit">Log in</button> <!-- Add type="submit" to the button -->
+            <button class="form-btn" type="submit">Log in</button>
         </form>
         <p class="sign-up-label">
             Don't have an account? <a href="signup.php" class="sign-up-link">Sign up</a>

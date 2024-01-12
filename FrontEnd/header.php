@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/checkout.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/products.css">
 
     <script src="js/cartPopup.js"></script>
     <!-- Custom Assets -->
@@ -85,12 +86,21 @@
         </div>
     </div>
     </div>
-    <!-- Login button -->
-    <a href="login.php">
-        <button>
-            <span>BUTTON</span>
-        </button>
+    <?php if (isset($_SESSION['user'])) : ?>
+        <p>Welcome, <?php echo $_SESSION['user']; ?>!</p>
+            <?php if (isset($_SESSION['admin'])) : ?>
+        <p>You are an admin!</p>
+        <?php $name = "yousif"; ?>
+    <?php endif; ?>
+    <a href="logout.php">
+        <button><span>Logout</span></button>
+
     </a>
 
+<?php else : ?>
+    <a href="login.php">
+        <button><span>Login</span></button>
 
-    <!-- Login button -->
+
+    </a>
+<?php endif; ?>

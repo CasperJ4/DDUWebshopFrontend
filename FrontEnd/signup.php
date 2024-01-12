@@ -5,25 +5,17 @@
 <div class="testbox">
     <h1>Registration</h1>
 
-    <form action="/">
+    <form method="POST" action="">
         <hr>
         <div class="accounttype">
-            <label for="radioOne"  chec>Signup Form</label>
+            <label for="radioOne" chec>Signup Form</label>
         </div>
         <hr>
-        <label id="icon" for="name"><i class="icon-envelope "></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required />
         <label id="icon" for="name"><i class="icon-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Name" required />
+        <input type="text" name="name" id="Username" placeholder="Username" required />
         <label id="icon" for="name"><i class="icon-shield"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required />
-        <div class="gender">
-            <input type="radio" value="None" id="male" name="gender" checked />
-            <label for="male" class="radio" chec>Male</label>
-            <input type="radio" value="None" id="female" name="gender" />
-            <label for="female" class="radio">Female</label>
-        </div>
+        <input type="password" name="name" id="password" placeholder="Password" required />
         <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-        <a href="#" class="button">Register</a>
+        <a  type="submit" class="button">Register</a>
     </form>
 </div>

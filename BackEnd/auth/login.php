@@ -1,41 +1,35 @@
 <?php
 require_once 'BackEnd\core\init.php'; // Include the Database class file
 
-// Initialize the Database class
 $db = Database::getInstance();
 
-$validation = null; // Declare $validation here
-
-if (Input::exists()) {
+if (Input::exists()) 
+{
     $validate = new Validation();
     $validation = $validate->check($_POST, array(
-        'email' => array(
-            'required' => true,
-        ),
-        'password' => array(
-            'required' => true,
-        )
+        'username' => array('required' => true), // Changed from 'email' to 'username'
+        'password' => array('required' => true)
     ));
+    if ($validation && $validation->passed()) 
+    {
+        $username = Input::get('username'); // Changed from 'email' to 'username'
+        $password = Input::get('password');
+        $adminid = Input::get('is_admin');
+        $user = $db->select('wsusers', '*', 'username = :username', [':username' => $username]); // Changed table and parameter
+        if ($user && $user[0]['password'] === $password) {
+            $_SESSION['user'] = $user[0]['username']; // Setting the session variable
+            var_dump($user[0]['is_admin']);
+            // Check if the user is an admin
+            if ($user[0]['is_admin'] === 1) 
+            {
+                $_SESSION['admin'] = true;
+                Redirect::to('index.php');
+                var_dump($_SESSION['admin']);
+            } else
+                Session::flash('Success', 'You have successfully logged in!');
+                Redirect::to('index.php');
+        } else {
+            echo '<p>Sorry, invalid username or password.</p>'; // Changed from 'email' to 'username'
+        }
+     }
 }
-// Use var_dump($validation) only for debugging; remove it in production
-var_dump($validation);
-
-// Check if $validation is an object and then if it passed
-if ($validation && $validation->passed()) {
-    $email = Input::get('email');
-    $password = Input::get('password');
-
-    // Retrieve user data from your database based on the provided email
-    $user = $db->select('users', '*', 'email = :email', [':email' => $email]);
-
-    if ($user && password_verify($password, $user[0]['password'])) {
-        // Successful login
-        Session::flash('Success', 'You have successfully logged in!');
-        Redirect::to('dashboard.php'); // Redirect to the dashboard or another page
-    } else {
-        // Invalid login
-        echo '<p>Sorry, invalid email or password.</p>';
-    }
-}
-// Use var_dump($validation) only for debugging; remove it in production
-var_dump($_POST);

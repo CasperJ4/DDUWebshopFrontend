@@ -1,3 +1,4 @@
+
  <div class="container mt-4">
      <div class="row text-center">
          <!-- Example of a single product card -->
