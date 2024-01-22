@@ -1,28 +1,23 @@
-
-
 <?php
 // Check if user is logged in as admin
 if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
-    ?>
-    <form action="productinsert.php" method="POST">
+?>
+    <form action="adminp.php" method="POST">
         <label for="product_name">Product Name:</label>
         <input type="text" id="product_name" name="product_name" required><br><br>
-        
+
         <label for="product_description">Description:</label>
         <textarea id="product_description" name="product_description" required></textarea><br><br>
-        
+
         <label for="product_stock">Stock:</label>
         <input type="number" id="product_stock" name="product_stock" required><br><br>
-        
+
         <label for="product_price_dkk">Price (DKK):</label>
-        <input type="number" id="product_price_dkk" name="product_price_dkk" required><br><br>
-        
-        <label for="product_discount_percentage">Discount Percentage:</label>
-        <input type="number" id="product_discount_percentage" name="product_discount_percentage" required><br><br>
-        
+        <input type="number" id="product_price_dkk" name="product_price" required><br><br>
+
         <input type="submit" value="Submit">
     </form>
-    <?php
+<?php
 } else {
     // Redirect to login page or index page based on login status
     if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {

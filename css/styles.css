@@ -88,3 +88,14 @@ body {
 
 
 
+.dataTables_wrapper {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(224, 2, 2, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dataTable {
+    width: 100%;
+    box-sizing: border-box;
+}

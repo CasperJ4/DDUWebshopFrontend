@@ -21,6 +21,8 @@
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $p['product_name']; ?></h5>
                             <p class="card-text"><?php echo $p['product_description']; ?></p>
+                            <p class="card-text"><strong>Price:</strong> <?php echo $p['product_price']; ?>kr</p>
+
                             <a href="#" class="btn btn-primary">Add to Cart</a>
                         </div>
                     </div>
@@ -34,6 +36,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <?php include 'footer.php'; ?>
-</body>
-
-</html>

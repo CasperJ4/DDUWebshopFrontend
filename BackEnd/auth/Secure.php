@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="css/admin.css">
-
 <?php
 
 // Check if user is logged in
@@ -15,4 +14,3 @@ if ($_SESSION['user'] !== 'admin') {
     header("Location: index.php");
     exit();
 }
-?>

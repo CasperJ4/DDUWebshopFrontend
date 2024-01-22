@@ -24,7 +24,6 @@ if (Input::exists())
             {
                 $_SESSION['admin'] = true;
                 Redirect::to('index.php');
-                var_dump($_SESSION['admin']);
             } else
                 Session::flash('Success', 'You have successfully logged in!');
                 Redirect::to('index.php');
