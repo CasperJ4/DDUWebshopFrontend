@@ -4,6 +4,18 @@ class Database
     private static $instance = null;
     private $pdo;
 
+
+    public function get($table, $where = null, $params = [])
+    {
+        $sql = "SELECT * FROM {$table}";
+
+        if ($where) {
+            $sql .= " WHERE {$where}";
+        }
+
+        $stmt = $this->query($sql, $params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     private function __construct()
     {
         // Define your database connection details here

@@ -8,4 +8,5 @@ require_once 'BackEnd\class\Validation.php';
 require_once 'BackEnd\core\Session.php';
 require_once 'BackEnd\class\user.php';
 require_once 'BackEnd\core\Redirect.php';
+require_once 'BackEnd\class\products.php';
 
