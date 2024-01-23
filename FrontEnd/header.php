@@ -14,8 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/checkout.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <link rel="stylesheet" href="css/admin.css">
-    <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/button.css">
+
 
     <script src="js/cartPopup.js"></script>
     <!-- Custom Assets -->
@@ -97,13 +98,13 @@
             <?php $name = "yousif"; ?>
         <?php endif; ?>
         <a href="logout.php">
-            <button><span>Logout</span></button>
+            <button class="costum-button"><span>Logout</span></button>
 
         </a>
 
     <?php else : ?>
         <a href="login.php">
-            <button><span>Login</span></button>
+            <button class="costum-button"><span>Login</span></button>
 
 
         </a>

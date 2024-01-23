@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $product_id) {
             'product_stock' => $_POST['product_stock'],
             // Add other fields as necessary
         ]);
-        header("Location: edit.php?product_id=" . $product_id); // Redirect to the same page with the updated product
+        $_SESSION['update-success'] = "Product successfully updated.";
+        Redirect::to('edit.php?product_id='. Input::get('product_id'));
         exit;
     } catch (Exception $e) {
         $error = $e->getMessage();
@@ -22,10 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $product_id) {
     $product = Products::getProductById($product_id);
     if (!$product) {
         echo "Product not found";
+        
         exit;
     }
 } else {
     // Handle the case where $product_id is not provided
     echo "Please select a product to edit.";
+    Redirect::to('adminp.php');
     exit;
 }

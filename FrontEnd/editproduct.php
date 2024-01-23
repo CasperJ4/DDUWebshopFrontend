@@ -1,8 +1,7 @@
 <div class="container">
     <h1>Edit Product</h1>
-    <!-- Backend integration: Check if $product is set and display form -->
     <?php if (isset($product) && $product) : ?>
-        <form action="edit.php" method="post">
+        <form action="" method="post"> <!-- Make sure this points to your backend script -->
             <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['product_id']) ?>">
 
             <label for="product_name">Product Name:</label>
@@ -16,9 +15,23 @@
 
             <!-- Include other fields as needed -->
 
-            <input type="submit" value="Update Product">
+            <div class="button-group">
+                <input type="submit" class="btn btn-success" value="Update Product">
+                <button type="button" class="btn btn-success" onclick="window.location.href='admin.php';">Go Back</button>
+            </div>
+            <?php if (isset($_SESSION['update-success'])) : ?>
+                <div class="alert alert-success">
+                    <?= $_SESSION['update-success'] ?>
+                </div>
+                <?php unset($_SESSION['update-success']); ?>
+
+            <?php endif; ?>
+
         </form>
     <?php else : ?>
-        <?php header("Location: edit.php?product_id=" . $product_id); ?>
+        <!-- Redirect logic -->
     <?php endif; ?>
+    <?php Redirect::to('edit.php?product_id=' . Input::get('product_id'));
+    exit; ?>
+
 </div>
