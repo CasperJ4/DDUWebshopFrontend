@@ -2,6 +2,32 @@
 
 class Session
 {
+    public static function addToCart($productId, $quantity)
+    {
+        if (!self::exists('cart')) {
+            self::put('cart', []);
+        }
+
+        $cart = self::get('cart');
+        if (isset($cart[$productId])) {
+            $cart[$productId] += $quantity;
+        } else {
+            $cart[$productId] = $quantity;
+        }
+
+        self::put('cart', $cart);
+    }
+
+    public static function removeFromCart($productId)
+    {
+        if (self::exists('cart')) {
+            $cart = self::get('cart');
+            if (isset($cart[$productId])) {
+                unset($cart[$productId]);
+                self::put('cart', $cart);
+            }
+        }
+    }
     public static function exists($name)
     {
         return (isset($_SESSION[$name])) ? true : false;
