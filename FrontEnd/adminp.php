@@ -12,7 +12,6 @@
     </div>
 
     <!-- Include your product insert form here -->
-    <?php include "prodinsert.php"; ?>
     <div class="mx-auto col-12" style="max-width: 1200px;">
 
         <div class="product-table">
@@ -49,5 +48,9 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <div style="text-align: center;">
+                <h1>Add Product</h1>
+            </div>
+            <?php include "prodinsert.php"; ?>
+
         </div>
-    

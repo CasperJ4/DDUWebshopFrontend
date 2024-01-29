@@ -1,8 +1,9 @@
 <div class="container">
     <h1>Edit Product</h1>
     <?php if (isset($product) && $product) : ?>
-        <form action="" method="post"> <!-- Make sure this points to your backend script -->
-            <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['product_id']) ?>">
+        <!-- Update Product Form -->
+        <form action="" method="post">
+            <input type="hidden" name="update_product" value="<?= htmlspecialchars($product['product_id']) ?>">
 
             <label for="product_name">Product Name:</label>
             <input type="text" id="product_name" name="product_name" value="<?= htmlspecialchars($product['product_name']) ?>" required><br>
@@ -15,23 +16,29 @@
 
             <!-- Include other fields as needed -->
 
-            <div class="button-group">
-                <input type="submit" class="btn btn-success" value="Update Product">
+            <!-- Button Group for Actions -->
+            <div class="form-button-group">
+                <button type="submit" class="btn btn-success" value="Update Product">Update Product</button>
                 <button type="button" class="btn btn-success" onclick="window.location.href='admin.php';">Go Back</button>
             </div>
-            <?php if (isset($_SESSION['update-success'])) : ?>
-                <div class="alert alert-success">
-                    <?= $_SESSION['update-success'] ?>
-                </div>
-                <?php unset($_SESSION['update-success']); ?>
-
-            <?php endif; ?>
-
         </form>
+
+        <!-- Delete Product Form -->
+        <form action="" method="post" class="form-button-group">
+            <input type="hidden" name="delete_product" value="<?= htmlspecialchars($product['product_id']) ?>">
+            <button type="submit" class="btn btn-danger">Delete Product</button>
+        </form>
+
+        <?php if (isset($_SESSION['update-success'])) : ?>
+            <div class="alert alert-success">
+                <?= $_SESSION['update-success'] ?>
+            </div>
+            <?php unset($_SESSION['update-success']); ?>
+        <?php endif; ?>
     <?php else : ?>
         <!-- Redirect logic -->
+        <script type="text/javascript">
+            window.location.href = 'edit.php?product_id=' + <?= json_encode(Input::get('product_id')) ?>;
+        </script>
     <?php endif; ?>
-    <?php Redirect::to('edit.php?product_id=' . Input::get('product_id'));
-    exit; ?>
-
 </div>

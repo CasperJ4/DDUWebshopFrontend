@@ -1,6 +1,5 @@
 <?php
 require_once 'BackEnd\core\init.php'; // Include the Database class file
-echo "hello there";
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productName = $_POST['product_name'];
@@ -25,6 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_product'])) {
+        $productId = $_POST['delete_product'];
+
+        // Delete product from database
+        try {
+            $db->delete('wsproducts', ['id', '=', $productId]);
+            echo "Product deleted successfully!";
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
 }
+
+// Delete product
+
 ?>
 

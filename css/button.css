@@ -65,3 +65,10 @@
         transform: scale(1);
     }
 }
+/* CSS file */
+.form-button-group {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    /* Adjust the gap between buttons as needed */
+}
