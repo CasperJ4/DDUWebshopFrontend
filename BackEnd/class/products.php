@@ -23,6 +23,9 @@ class Products
 
     public static function getProductById($product_id)
     {
+        // Ensure that the $db property is initialized before using it
+     
+
         $products = self::$db->get('wsproducts', "product_id = :product_id", ['product_id' => $product_id]);
         return $products ? $products[0] : null;
     }

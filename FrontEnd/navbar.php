@@ -1,9 +1,8 @@
 <div class="container mt-4 text-center">
     <h1>Modern Website</h1>
-
 </div>
-</style>
-<nav class="navbar navbar-expand-lg navbar-light  centered-nav sticky-top" style="background-color: white;">
+
+<nav class="navbar navbar-expand-lg navbar-light centered-nav" style="background-color: white;">
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">

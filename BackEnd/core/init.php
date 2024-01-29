@@ -9,4 +9,5 @@ require_once 'BackEnd\core\Session.php';
 require_once 'BackEnd\class\user.php';
 require_once 'BackEnd\core\Redirect.php';
 require_once 'BackEnd\class\products.php';
+require_once 'BackEnd\class\Cart.php';
 

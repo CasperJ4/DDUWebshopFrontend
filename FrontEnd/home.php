@@ -23,10 +23,16 @@
                             <p class="card-text"><?php echo $p['product_description']; ?></p>
                             <p class="card-text"><strong>Price:</strong> <?php echo $p['product_price']; ?>kr</p>
 
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                            <!-- Add to Cart Form -->
+                            <form action="" method="post">
+                                <input type="hidden" name="product_id" value="<?php echo $p['product_id']; ?>">
+                                <input type="hidden" name="quantity" value="1"> <!-- Assuming default quantity as 1 -->
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 <?php endforeach; ?>
+
                 <!-- Additional products can be added here -->
             </div>
         </div>
