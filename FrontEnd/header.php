@@ -31,13 +31,15 @@
     <?php if (isset($_SESSION['user'])) : ?>
         <?php if (isset($_SESSION['admin'])) : ?>
         <?php endif; ?>
-        <button class="costum-button"><span>Logout</span></button>
         <a href="logout.php">
+
+            <button class="costum-button"><span>Logout</span></button>
 
         </a>
     <?php else : ?>
-        <button class="costum-button"><span>Login</span></button>
         <a href="login.php">
+
+            <button class="costum-button"><span>Login</span></button>
 
         </a>
     <?php endif; ?>

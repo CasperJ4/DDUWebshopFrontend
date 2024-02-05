@@ -3,10 +3,10 @@
         <!-- Menu -->
         <div class="col-md-3">
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">Menu</a>
-                <a href="#" class="list-group-item list-group-item-action">Kategori 2</a>
-                <a href="#" class="list-group-item list-group-item-action">Kategori 3</a>
-                <a href="#" class="list-group-item list-group-item-action">Kategori 4</a>
+                <a href="#" class="list-group-item list-group-item-action active">Alle</a>
+                <a href="#" class="list-group-item list-group-item-action">Kina</a>
+                <a href="#" class="list-group-item list-group-item-action">USA</a>
+                <a href="#" class="list-group-item list-group-item-action">Comming Soon</a>
             </div>
         </div>
 
@@ -27,7 +27,7 @@
                             <form action="" method="post">
                                 <input type="hidden" name="product_id" value="<?php echo $p['product_id']; ?>">
                                 <input type="hidden" name="quantity" value="1"> <!-- Assuming default quantity as 1 -->
-                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                <button type="submit" class="btn btn-primary">Add</button>
                             </form>
                         </div>
                     </div>
