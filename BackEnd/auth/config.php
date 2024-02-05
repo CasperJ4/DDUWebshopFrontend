@@ -1,6 +1,6 @@
 <?php
 
-require_once 'BackEnd\core\init.php'; // Include the Database class file
+require_once 'BackEnd/core/init.php'; 
 
 $GLOBALS['config'] = array(
     'database' => array(

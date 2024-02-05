@@ -1,5 +1,5 @@
 <?php
-require_once 'BackEnd\core\init.php'; // Include the Database class file
+require_once 'BackEnd/core/init.php'; 
 // Array to store products
 $products = Products::getAllProducts();
 

@@ -1,5 +1,5 @@
 <?php
-require_once 'BackEnd\core\init.php'; // Include the Database class file
+require_once 'BackEnd/core/init.php'; 
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $productName = $_POST['product_name'];

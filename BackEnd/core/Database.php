@@ -18,11 +18,16 @@ class Database
     }
     private function __construct()
     {
-        // Define your database connection details here
-        $host = 'localhost';
-        $dbname = 'webshop';
-        $username = 'root';
-        $password = '';
+        // Load database configuration from secrets.ini file
+        $config = parse_ini_file('../secrets.ini', true);
+        if (isset($config['database'])) {
+            $host = $config['database']['db_host'];
+            $dbname = $config['database']['db_name'];
+            $username = $config['database']['db_user'];
+            $password = $config['database']['db_password'];
+        } else {
+            die("Database configuration not found.");
+        }
 
         $dsn = "mysql:host={$host};dbname={$dbname}";
         $options = [

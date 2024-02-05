@@ -1,7 +1,7 @@
 <html lang="en">
 
 <head>
-    <title>Modern Website</title>
+    <title>LeaderFiesta</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -29,15 +29,15 @@
 
     <!-- User Session and Login/Logout -->
     <?php if (isset($_SESSION['user'])) : ?>
-        <p>Welcome, <?php echo $_SESSION['user']; ?></p>
         <?php if (isset($_SESSION['admin'])) : ?>
-            <p>You are an admin!</p>
         <?php endif; ?>
+        <button class="costum-button"><span>Logout</span></button>
         <a href="logout.php">
-            <button class="costum-button"><span>Logout</span></button>
+
         </a>
     <?php else : ?>
+        <button class="costum-button"><span>Login</span></button>
         <a href="login.php">
-            <button class="costum-button"><span>Login</span></button>
+
         </a>
     <?php endif; ?>

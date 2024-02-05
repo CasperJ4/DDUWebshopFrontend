@@ -1,5 +1,5 @@
 <?php
-require_once 'BackEnd\core\init.php'; // Include the Database class file
+require_once 'BackEnd/core/init.php'; 
 
 $db = Database::getInstance();
 
@@ -18,7 +18,6 @@ if (Input::exists())
         $user = $db->select('wsusers', '*', 'username = :username', [':username' => $username]); // Changed table and parameter
         if ($user && $user[0]['password'] === $password) {
             $_SESSION['user'] = $user[0]['username']; // Setting the session variable
-            var_dump($user[0]['is_admin']);
             // Check if the user is an admin
             if ($user[0]['is_admin'] === 1) 
             {

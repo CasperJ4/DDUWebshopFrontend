@@ -1,5 +1,5 @@
 <div class="container mt-4 text-center">
-    <h1>Modern Website</h1>
+    <h1>LeaderFiesta</h1>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light centered-nav" style="background-color: white;">

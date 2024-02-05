@@ -1,5 +1,5 @@
 <?php
-require_once 'BackEnd/core/init.php';
+require_once 'BackEnd/core/init.php'; 
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
