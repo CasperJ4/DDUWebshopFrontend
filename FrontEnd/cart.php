@@ -1,3 +1,4 @@
+
 <div class="shopping-cart ml-auto" onclick="togglePopup()">
     <span class="cart-icon">🛒 <span class="cart-count">
             <?php
@@ -7,16 +8,18 @@
 </div>
 
 <!-- Cart Popup Content -->
-<div class="cart-popup" id="cartPopup">
+<div class="cart-popup max-height=35;" id="cartPopup" style="display: none; ">
     <div class="cart-content" style="max-height: 400px; overflow-y: auto;">
         <span class="close-btn" onclick="togglePopup()">&times;</span>
         <h3>Your Shopping Cart</h3>
 
         <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) : ?>
-            <?php foreach ($_SESSION['cart'] as $productId => $quantity) : ?>
+            <?php
+            $subtotal = 0;
+            foreach ($_SESSION['cart'] as $productId => $quantity) : ?>
                 <?php
-                // Assuming you have a function to fetch product details by ID, replace getProductById with your actual function
                 $product = Products::getProductById($productId);
+                $subtotal += $product['product_price'] * $quantity; // Calculate subtotal
                 ?>
                 <div class="row">
                     <div class="col-md-4 col-12">
@@ -31,10 +34,11 @@
                 </div>
                 <hr>
             <?php endforeach; ?>
+            <h5>Subtotal: <?php echo $subtotal; ?>kr</h5>
+            <button class="btn btn-primary w-100">Checkout</button>
+            
         <?php else : ?>
             <p>Your cart is empty.</p>
         <?php endif; ?>
-
-        <!-- Total calculation and display -->
     </div>
 </div>
