@@ -16,7 +16,8 @@ if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['produc
         $cart->addToCart($product_id, $quantity);
 
         // Prevent form resubmission...
-        header('location: index.php?page=cart');
+        // Redirect to same page to prevent form resubmission
+        header('Location: ' . $_SERVER['REQUEST_URI']);
         exit;
     } catch (PDOException $e) {
         // Handle database connection errors here.

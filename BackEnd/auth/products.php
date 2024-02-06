@@ -23,6 +23,21 @@ foreach ($products as $row) {
         'category_id' => $row['category_id'],
         'category_name' => $categoryName,
     ];
+
+
+
+
+
+
+    $selectedCategory = $_GET['category'] ?? 'all'; // Get the selected category from URL, default to 'all'
+
+    // Modify this to fetch products based on selected category
+    // This is a simplistic approach, you'll likely need to adjust it based on your actual database schema and methods
+    if ($selectedCategory == 'all') {
+        $products = Products::getAllProducts(); // Fetch all products if 'ALL' is selected
+    } else {
+        $products = Products::getProductsByCategory($selectedCategory); // You'll need to implement this method based on your needs
+    }
 }
 
 // Now, $data contains all products with their category names included

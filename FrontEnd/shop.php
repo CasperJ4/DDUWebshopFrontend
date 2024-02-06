@@ -3,13 +3,14 @@
         <!-- Menu -->
         <div class="col-md-3">
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">Alle</a>
-                <a href="#" class="list-group-item list-group-item-action">Kina</a>
-                <a href="#" class="list-group-item list-group-item-action">USA</a>
-                <a href="#" class="list-group-item list-group-item-action">Comming Soon</a>
+                <a href='?category=all' class="list-group-item list-group-item-action <?= $selectedCategory == 'all' ? 'active' : ''; ?>">ALL</a>
+                <?php foreach ($categories as $category) : ?>
+                    <a href="?category=<?= $category['id']; ?>" class="list-group-item list-group-item-action <?= $selectedCategory == $category['id'] ? 'active' : ''; ?>">
+                        <?= $category['name']; ?>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
-
         <!-- Products -->
         <div class="col-md-9">
             <div class="row">
@@ -22,9 +23,9 @@
                                 <p class="card-text"><?php echo $p['product_description']; ?></p>
                                 <p class="card-text"><strong>Price:</strong> <?php echo $p['product_price']; ?>kr</p>
                                 <!-- Add to Cart Form -->
-                                <form action="" method="post" class="mt-auto"> 
+                                <form action="" method="post" class="mt-auto">
                                     <input type="hidden" name="product_id" value="<?php echo $p['product_id']; ?>">
-                                    <input type="hidden" name="quantity" value="1"> 
+                                    <input type="hidden" name="quantity" value="1">
                                     <button type="submit" class="btn btn-primary w-100">Add</button>
                                 </form>
                             </div>

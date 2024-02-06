@@ -14,5 +14,10 @@ class Category
         $db = Database::getInstance();
         return $db->get(self::$table);
     }
+    public static function getCategoryById($id)
+    {
+        $db = Database::getInstance();
+        return $db->get(self::$table, ['id', '=', $id]);
+    }
 }
 
