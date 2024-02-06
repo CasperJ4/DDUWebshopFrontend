@@ -32,6 +32,15 @@ class Products
         $products = self::$db->get(self::$table, "product_id = :product_id", ['product_id' => $product_id]);
         return $products ? $products[0] : null;
     }
+    public static function getProductsByCategory($categoryID)
+    {
+        if (!self::$db) {
+            self::init();
+        }
+        // Adjusted to use the correct table name and proper parameter binding
+        $products = self::$db->get(self::$table, "category_id = :category_id", ['category_id' => $categoryID]);
+        return $products;
+    }
 
     public static function updateProduct($product_id, $fields)
     {

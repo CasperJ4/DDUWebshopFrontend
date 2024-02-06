@@ -6,6 +6,14 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
         <label for="product_name">Product Name:</label>
         <input type="text" id="product_name" name="product_name" required><br><br>
 
+        <select id="category_id" name="category_id" required>
+            <?php foreach ($categories as $category) : ?>
+                <option value="<?= htmlspecialchars($category['id']) ?>" <?= ($category['id'] == $product['category_id']) ? 'selected' : '' ?>>
+                    <?= htmlspecialchars($category['name']) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
         <label for="product_description">Description:</label>
         <textarea id="product_description" name="product_description" required></textarea><br><br>
 
