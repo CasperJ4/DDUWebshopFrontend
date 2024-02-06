@@ -1,6 +1,9 @@
 <?php
 require_once 'BackEnd/core/init.php';
 Products::init();
+Category::init();
+$categories = Category::getCategories();
+var_dump($categories);
 
 $product_id = $_GET['product_id'] ?? $_POST['product_id'] ?? null;
 $product = null;
@@ -24,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'product_name' => $_POST['product_name'],
                 'product_description' => $_POST['product_description'],
                 'product_stock' => $_POST['product_stock'],
+                'category_id' => $_POST['category_id'],
                 // Add other fields as necessary
             ]);
             $_SESSION['update-success'] = "Product successfully updated.";

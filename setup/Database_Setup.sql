@@ -34,4 +34,31 @@ INSERT INTO `wsproducts` (`product_name`, `product_description`, `product_stock`
 ('Yoga Mat', 'Eco-friendly, non-slip yoga mat with excellent cushioning and durability for all types of yoga.', 50, 'https://via.placeholder.com/250', 45),
 ('Running Shoes', 'Lightweight and breathable running shoes with adaptive cushioning for long-distance comfort.', 25, 'https://via.placeholder.com/150', 120);
 
+-- Create the wscategory table 
+CREATE TABLE `wscategory` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_general_ci NOT NULL,
+  `description` text COLLATE utf8_general_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+-- Data for the wscategory table
+INSERT INTO wscategory (name, description) VALUES
+('Asia', 'BLABLABLA.'),
+('Middle East', 'BLABLABLA.'),
+('Africa', 'BLABLABLA.'),
+('South America', 'BLABLABLA.'),
+('North America', 'BLABLABLA.'),
+('Eastern Europe', 'BLABLABLA.'),
+('Western Europe', 'BLABLABLA.'),
+('Oceania', 'BLABLABLA.'),
+('Antarctica', 'BLABLABLA.');
+-- Add a foreign key to the wsproducts table
+ALTER TABLE wsproducts
+ADD COLUMN category_id INT,
+ADD CONSTRAINT fk_category
+FOREIGN KEY (category_id)
+REFERENCES wscategory(id);
+
+
+
 

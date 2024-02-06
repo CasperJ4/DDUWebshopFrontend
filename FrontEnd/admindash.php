@@ -11,9 +11,7 @@
             </div>
         </div>
         <div class="col-md-9">
-
             <div class="mx-auto col-12" style="max-width: 1200px;">
-
                 <div class="product-table">
                     <table>
                         <thead>
@@ -22,21 +20,23 @@
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Stock</th>
+                                <th>Category</th> <!-- Added Category heading -->
                                 <th>Image</th>
                                 <th>Created At</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($products as $product) : ?>
+                            <?php foreach ($data as $product) : ?>
                                 <tr>
                                     <td><?= htmlspecialchars($product['product_id']) ?></td>
                                     <td><?= htmlspecialchars($product['product_name']) ?></td>
                                     <td><?= htmlspecialchars($product['product_description']) ?></td>
                                     <td><?= htmlspecialchars($product['product_stock']) ?></td>
+                                    <td><?= htmlspecialchars($product['category_name']) ?></td> <!-- Assuming 'category_name' is available -->
                                     <td>
                                         <?php if ($product['product_image_url']) : ?>
-                                            <img src="<?= htmlspecialchars($product['product_image_url']) ?>" alt="Product Image">
+                                            <img src="<?= htmlspecialchars($product['product_image_url']) ?>" alt="Product Image" style="width: 100px;"> <!-- Added inline styling for image size -->
                                         <?php endif; ?>
                                     </td>
                                     <td><?= htmlspecialchars($product['created_at']) ?></td>
@@ -48,3 +48,8 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
