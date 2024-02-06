@@ -5,17 +5,19 @@
 <div class="testbox">
     <h1>Registration</h1>
 
-    <form method="POST" action="">
+    <form method="POST" action=""> <!-- Make sure this points to your PHP file -->
         <hr>
         <div class="accounttype">
-            <label for="radioOne" chec>Signup Form</label>
+            <label>Signup Form</label>
         </div>
         <hr>
-        <label id="icon" for="name"><i class="icon-user"></i></label>
-        <input type="text" name="name" id="Username" placeholder="Username" required />
-        <label id="icon" for="name"><i class="icon-shield"></i></label>
-        <input type="password" name="name" id="password" placeholder="Password" required />
+        <label id="icon" for="Username"><i class="icon-user"></i></label>
+        <input type="text" name="username" id="Username" placeholder="Username" required />
+        <label id="icon" for="password"><i class="icon-shield"></i></label>
+        <input type="password" name="password" id="password" placeholder="Password" required />
         <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-        <a  type="submit" class="button">Register</a>
+        <!-- Hidden submit button -->
+        <input type="submit" id="submit-form" style="display: none;" />
+        <a href="#" class="button" onclick="document.getElementById('submit-form').click(); return false;">Register</a> <!-- Styled link that triggers the hidden submit button -->
     </form>
 </div>

@@ -2,7 +2,7 @@
 // Check if user is logged in as admin
 if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
 ?>
-    <form action="adminp.php" method="POST">
+    <form action="adminp.php" method="POST" enctype="multipart/form-data">
         <label for="product_name">Product Name:</label>
         <input type="text" id="product_name" name="product_name" required><br><br>
 
@@ -15,7 +15,12 @@ if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
         <label for="product_price_dkk">Price (DKK):</label>
         <input type="number" id="product_price_dkk" name="product_price" required><br><br>
 
+        <label for="product_image">Upload Image:</label>
+        <input type="file" id="product_image" name="product_image" required><br><br>
+
         <input type="submit" value="Submit">
+    </form>
+
     </form>
 <?php
 } else {

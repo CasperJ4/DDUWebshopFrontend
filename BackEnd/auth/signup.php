@@ -14,13 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Ideally, hash the password before storing it
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Save the user data to the database
     $user = new User();
     $user->create(array(
         'username' => $username,
-        'password' => $hashedPassword // Store the hashed password
+        'password' => $password // Store the hashed password
     ));
     
     // Redirect to a success page
